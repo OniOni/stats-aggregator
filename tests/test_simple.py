@@ -1,12 +1,12 @@
 import unittest
 import statistics
 
-import stats_aggregator.stats_aggregator as agr
+import stats_aggregator
 
 class TestStatsAggregator(unittest.TestCase):
 
     def setUp(self):
-        self.agr = agr.StatsAggregator()
+        self.agr = stats_aggregator.StatsAggregator()
 
     def test_mean_simple(self):
         data_set = [0]
