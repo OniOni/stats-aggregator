@@ -7,9 +7,9 @@ class BaseStatsAggregator(object):
         self._supports = []
         self._max_length = length
 
-    def add(self, name, val, **kwargs):
-        self._stats[name] = {k: val for k in kwargs if k in self._supports}
-        self._stats[name]['vals'] = [val]
+    def add(self, name, init):
+        self._stats[name] = {k: init for k in self._supports}
+        self._stats[name]['vals'] = [init]
 
     def cleanup(self):
         if len(self._stats) > self._max_length:
